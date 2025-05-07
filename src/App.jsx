@@ -1,17 +1,15 @@
 import './App.css'
-import { FaRegHandRock } from "react-icons/fa";
-import { FaRegHandPaper } from "react-icons/fa";
-import { FaRegHandScissors } from "react-icons/fa";
 import Player from './Player.jsx'
 import PlayerScore from './PlayerScore.jsx';
-import ActionIcon from './ActionIcon.jsx';
 import ActionButton from './ActionButton.jsx';
 import { useState } from 'react';
 
 const actions = {
-  rock: "scissor",
-  paper: "rock",
-  scissor: "paper",
+  rock: ["lizard", "scissors"],
+  paper: ["rock", "spock"],
+  scissors: ["paper", "lizard"],
+  lizard: ["paper", "spock"],
+  spock: ["rock", "scissors"],
 };
 
 function randomAction(){
@@ -27,11 +25,11 @@ function calculateWinner(action1, action2) {
   {
     return 0;
   }
-  else if(actions[action1] === action2)
+  else if(actions[action1].includes(action2))
   {
     return -1;
   }
-  else if(actions[action2] === action1)
+  else if(actions[action2].includes(action1))
   {
     return 1;
   }
@@ -102,7 +100,9 @@ function App() {
         <div className="choices">
           <ActionButton action="rock" onActionSelected={onActionSelected} />
           <ActionButton action="paper" onActionSelected={onActionSelected} />
-          <ActionButton action="scissor" onActionSelected={onActionSelected} />
+          <ActionButton action="scissors" onActionSelected={onActionSelected} />
+          <ActionButton action="lizard" onActionSelected={onActionSelected} />
+          <ActionButton action="spock" onActionSelected={onActionSelected} />
         </div>
       </div>
 

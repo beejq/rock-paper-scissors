@@ -1,3 +1,3 @@
-# A Simple Rock Paper Scissor Game
+# A Simple Rock Paper Scissors Lizard Spock Game
 
-This is a simple Rock Paper Scissor Game made using ReactJS
+This is a simple Rock Paper Scissors Lizard Spock Game made using ReactJS
